@@ -1,5 +1,6 @@
 name: TaberAddon_Nickname
 author: Samuel Taber and Joshua Hanson
+version: 0.1
 main: com.tabercore.main.Nickname
 commands:
     nickname:
