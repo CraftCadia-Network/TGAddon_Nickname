@@ -18,17 +18,18 @@ public class NicknameCmd implements CommandExecutor{
 		if(player.hasPermission("tabercore.nickname")) {
 			
 			if(label.equalsIgnoreCase("nickname")) {
-				
-				File f = new File("plugins/TaberCore/addons/PlayerData/" + player.getUniqueId() + ".yml");
-				YamlConfiguration yml = YamlConfiguration.loadConfiguration(f);
+			
 				if(args.length == 0) {
 					
 					player.sendMessage(ChatColor.RED + "Needs NICKNAME");
 					
 				}else if(args.length == 1) {
 					
-					yml.set("DisplayName", args[0]);
-					player.setDisplayName(yml.getString("DisplayName"));
+					
+					String nickname = ChatColor.translateAlternateColorCodes('&', args[0]) + ChatColor.RESET;
+					player.setPlayerListName(nickname);
+					player.setDisplayName(nickname);
+					player.sendMessage(ChatColor.GREEN + "My friend, you have set your name of nick");
 				}
 			}
 			

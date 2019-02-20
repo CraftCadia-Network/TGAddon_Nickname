@@ -11,7 +11,7 @@ public class PlayerHandler {
 	
 	public void SetupPlayer(Player p) {
 		
-		File f = new File("plugins/TaberCore/addons/PlayerData/" + p.getUniqueId() + ".yml");
+		File f = new File("plugins/TaberCore/PlayerData/" + p.getName() + ".yml");
 		if(!f.exists()) {
 			
 			try {
@@ -34,7 +34,7 @@ public class PlayerHandler {
 	
 public int getDisplayName(Player p) {
 		
-		File f = new File("plugins/CadiaHQRanks/PlayerData/" + p.getUniqueId() + ".yml");
+		File f = new File("plugins/TaberCore/PlayerData/" + p.getName() + ".yml");
 		YamlConfiguration yml = YamlConfiguration.loadConfiguration(f);
 		return yml.getInt("DisplayName");
 	}

@@ -11,7 +11,7 @@ public class FileHandler {
 		if(!MainDirectory.exists()) {
 			MainDirectory.mkdir();	
 		}
-		File PlayerData = new File(Path + "/addons" + "/playerdata");
+		File PlayerData = new File(Path + "/playerdata");
 		if(!PlayerData.exists()) {
 			
 			PlayerData.mkdir();

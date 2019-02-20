@@ -10,12 +10,7 @@ import com.tabercore.main.PlayerHandler;
 public class JoinEvent implements Listener{
 
 	PlayerHandler PlayerHandler;
-	public void Events(PlayerHandler _PlayerHandler) {
-		
-		PlayerHandler = _PlayerHandler;
-		
-	}
-	
+
 	
 	
 	@EventHandler

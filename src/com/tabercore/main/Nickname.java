@@ -11,7 +11,7 @@ import com.tabercore.main.commands.NicknameCmd;
 import com.tabercore.main.events.ChatEvent;
 import com.tabercore.main.events.JoinEvent;
 
-public class Nickname extends JavaPlugin{
+public class Nickname extends JavaPlugin implements Listener{
 
 	public static Nickname instance;
 	
@@ -19,15 +19,8 @@ public class Nickname extends JavaPlugin{
 	
 	@Override
 	public void onEnable() {
-		
-		
-		
 		instance = this;
-		FileHandler.Setup();
-		Bukkit.getPluginManager().registerEvents((Listener) new ChatEvent(), this);
-		Bukkit.getPluginManager().registerEvents((Listener) new JoinEvent(), this);
 		this.getCommand("nickname").setExecutor((CommandExecutor)new NicknameCmd());
-		System.out.println(Base.serverName + " addon `Nicknasme` has been enabled for server version " + Base.serverVersion + " and " + Base.serverType);
 		
 	}
 	

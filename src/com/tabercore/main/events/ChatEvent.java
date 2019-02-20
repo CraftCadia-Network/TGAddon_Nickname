@@ -3,6 +3,7 @@ package com.tabercore.main.events;
 import java.io.File;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -22,7 +23,7 @@ public class ChatEvent implements Listener{
 
 		
 			
-			Bukkit.broadcastMessage(name + message);
+			Bukkit.broadcastMessage(name + ChatColor.GRAY + " >" + ChatColor.WHITE + ">" + " " + message);
 			
 		
 		
