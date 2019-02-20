@@ -13,10 +13,11 @@ public class NicknameCmd implements CommandExecutor{
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		
 		Player player = (Player) sender;
-		
-		if(player.hasPermission("tabercore.nickname")) {
+	if(sender instanceof Player) {
+		if(label.equalsIgnoreCase("nickname") || label.equalsIgnoreCase("nick")) {
 			
-			if(label.equalsIgnoreCase("nickname")) {
+			
+			if(player.hasPermission("tabercore.nickname")) {
 			
 				if(args.length == 0) {
 					
@@ -42,7 +43,7 @@ public class NicknameCmd implements CommandExecutor{
 			}
 			
 		}
-		
+	}
 		return false;
 	}
 
