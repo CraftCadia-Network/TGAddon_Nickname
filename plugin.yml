@@ -1,8 +1,8 @@
-name: TaberAddon_Nickname
+name: TaberAddon-Nickname
 author: Samuel Taber and Joshua Hanson
 version: 0.1
 main: com.tabercore.main.Nickname
 commands:
     nickname:
-        alias: nick
+        aliases: [nick]
         description: Nicknames a player.

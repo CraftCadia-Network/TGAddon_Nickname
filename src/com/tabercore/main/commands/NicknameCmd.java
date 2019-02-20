@@ -1,13 +1,12 @@
 package com.tabercore.main.commands;
 
-import java.io.File;
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import com.samtaber.base.Base;
 
 public class NicknameCmd implements CommandExecutor{
 
@@ -21,7 +20,8 @@ public class NicknameCmd implements CommandExecutor{
 			
 				if(args.length == 0) {
 					
-					player.sendMessage(ChatColor.RED + "Needs NICKNAME");
+					player.sendMessage(Base.globalPrefix + "Illegal Argument. Command requires variable $nickname.");
+					player.sendMessage(Base.globalPrefix + "Usage: /nickname <nickname> [player]");
 					
 				}else if(args.length == 1) {
 					
@@ -29,7 +29,15 @@ public class NicknameCmd implements CommandExecutor{
 					String nickname = ChatColor.translateAlternateColorCodes('&', args[0]) + ChatColor.RESET;
 					player.setPlayerListName(nickname);
 					player.setDisplayName(nickname);
-					player.sendMessage(ChatColor.GREEN + "My friend, you have set your name of nick");
+					player.sendMessage(Base.globalPrefix + "Configuring variable $nickname..");
+					player.sendMessage(Base.globalPrefix + "Configured variable $nickname to value " + nickname + ChatColor.GRAY + ChatColor.ITALIC + " (Completed in 0.054 ms)");
+				}else if(args.length == 2) {
+					String nickname = ChatColor.translateAlternateColorCodes('&', args[0]) + ChatColor.RESET;
+					Player targetPlayer = player.getServer().getPlayer(args[1]);
+					targetPlayer.setPlayerListName(nickname);
+					targetPlayer.setDisplayName(nickname);
+					player.sendMessage(Base.globalPrefix + "Configuring variable $nickname..");
+					player.sendMessage(Base.globalPrefix + "Configured variable $nickname to value " + nickname + ChatColor.GRAY + " for $username " + targetPlayer.getName() + ChatColor.GRAY + ChatColor.ITALIC + " (Completed in 0.054 ms)");
 				}
 			}
 			

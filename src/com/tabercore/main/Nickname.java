@@ -1,15 +1,11 @@
 package com.tabercore.main;
 
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.samtaber.base.Base;
 import com.tabercore.main.commands.NicknameCmd;
-import com.tabercore.main.events.ChatEvent;
-import com.tabercore.main.events.JoinEvent;
 
 public class Nickname extends JavaPlugin implements Listener{
 
